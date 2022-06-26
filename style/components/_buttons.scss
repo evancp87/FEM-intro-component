@@ -1,0 +1,7 @@
+@use "../abstracts/" as *;
+
+.learn-more {
+  @extend %btn;
+  color: $white;
+  background: $black;
+}

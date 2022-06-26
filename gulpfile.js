@@ -1,40 +1,39 @@
 const gulp = require("gulp"),
   sass = require("gulp-sass")(require("sass")),
-  concat = require("gulp-concat"),
-  jshint = require("gulp-jshint"),
-  autoprefixer = require("gulp-autoprefixer");
+  browserSync = require("browser-sync").create();
 
-gulp.task("styles", function () {
-  return gulp
-    .src("styles/*.scss")
-    .pipe(
-      sass({
-        "sourcemap=none": true,
-      })
-    )
-    .pipe(concat("style.css"))
-    .pipe(
-      autoprefixer("last 2 version", "safari 5", "ie 8", "ie 9", "opera 12.1")
-    )
-    .pipe(gulp.dest("styles/"));
-});
+// compile scss to css
 
-gulp.task("jshint", function () {
-  return gulp.src("scripts/*js").pipe(jshint());
-});
+function generateCSS() {
+  // where my scss files are generated
+  return (
+    gulp
+      .src("./style/**/*.scss")
+      //   pass file through sass compiler
+      .pipe(sass().on("error", sass.logError))
+      //   where do i save compiled sass
+      .pipe(gulp.dest("./css"))
+      //   for stream changes for all browsers
+      .pipe(browserSync.stream())
+  );
+}
 
-gulp.task("jshint", function () {
-  return gulp.src("scripts/*js").pipe(jshint());
-});
+function watch() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+    },
+  });
+  gulp.watch("./style/**/*.scss", generateCSS);
+  // .on is on change
+  gulp.watch("*.html").on("change", browserSync.reload);
+  gulp.watch("./scripts/*.js").on("change", browserSync.reload);
+}
 
-gulp.task("watch", function () {
-  gulp.watch("styles/*.scss", gulp.series("styles"));
-  gulp.watch("scripts/*.js", gulp.series("jshint"));
-});
+exports.generateCSS = generateCSS;
+exports.watch = watch;
 
-gulp.task("default", ["styles", "jshint", "watch"]);
-
-// gulp-eslint
-// gulp-awspublish
-// gulp-nodemon
-// gulp-live-server
+// // gulp-eslint
+// // gulp-awspublish
+// // gulp-nodemon
+// // gulp-live-server

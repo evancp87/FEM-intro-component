@@ -1,0 +1,124 @@
+@use "./abstracts" as *;
+
+.main-content {
+  display: grid;
+
+  grid-auto-rows: auto;
+
+  // @include flexbox-config($flex-direction: column);
+  max-width: 100%;
+  @include tablet-breakpoint {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4rem 2rem;
+
+    // @include flexbox-config($flex-direction: row);
+    // width: 80vw;
+    // height: 640px;
+  }
+
+  .hero {
+    order: 1;
+    @include tablet-breakpoint {
+      max-width: 100%;
+      // width: 50%;
+      order: 2;
+    }
+    .hero__img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      @include tablet-breakpoint {
+        width: 480px;
+      }
+    }
+  }
+}
+.blurb {
+  margin-top: 2rem;
+  order: 2;
+  @include flexbox-config($flex-direction: column);
+  @include tablet-breakpoint {
+    margin-top: 0px;
+    max-width: 100%;
+    order: 1;
+
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+  }
+  .blurb__txt {
+    margin-top: 2em;
+    padding: {
+      top: 0.8em;
+      bottom: 0.8em;
+      right: 2em;
+    }
+  }
+}
+
+.learn-more-container {
+  @include flexbox-config($justify-content: center);
+  @include tablet-breakpoint {
+    justify-content: flex-start;
+    margin-top: $padding-md-em;
+  }
+  .learn-more {
+    color: $white;
+    background-color: $black;
+    display: inline-block;
+    width: 136px;
+    height: auto;
+    border-radius: 0.6em;
+    padding: 0.8em;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: scale-color($color: $black, $lightness: +100%);
+      color: scale-color($color: $black, $lightness: -100%);
+    }
+  }
+}
+
+.heading {
+  font-size: clamp(36px, 10vw, 80px);
+  font-weight: $lg-weight;
+  @include flexbox-config($justify-content: center);
+}
+
+.company-logos {
+  @include flexbox-config($flex-direction: row, $justify-content: space-around);
+
+  @include tablet-breakpoint {
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  .company-logos-item {
+    > img {
+      width: 64px;
+      height: auto;
+      margin: {
+        top: 1em;
+        bottom: 1em;
+        left: 0.1em;
+        right: 0.1em;
+      }
+      @include tablet-breakpoint {
+        width: 80px;
+        margin-right: 2em;
+      }
+    }
+  }
+  @include tablet-breakpoint {
+    margin: 0;
+  }
+}
+
+.hamburger-menu {
+  @include tablet-breakpoint {
+    display: none;
+  }
+  position: relative;
+  z-index: 10;
+}

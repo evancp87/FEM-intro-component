@@ -1,0 +1,17 @@
+.features {
+  cursor: pointer;
+  .features__item {
+    &:nth-of-type(1) {
+      list-style-image: url(../../images/icon-todo.svg);
+    }
+    &:nth-of-type(2) {
+      list-style-image: url(../../images/icon-calendar.svg);
+    }
+    &:nth-of-type(3) {
+      list-style-image: url(../../images/icon-reminders.svg);
+    }
+    &:nth-of-type(4) {
+      list-style-image: url(../../images/icon-planning.svg);
+    }
+  }
+}

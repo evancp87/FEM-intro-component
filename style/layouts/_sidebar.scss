@@ -1,0 +1,76 @@
+@use "../abstracts/" as a;
+
+.navigation {
+  @include a.flexbox-config(
+    $flex-direction: row,
+    $justify-content: space-between
+  );
+  width: 100vw;
+  padding: 1em;
+
+  .navigation__nav-items {
+    @include a.flexbox-config($flex-direction: column);
+    @include a.tablet-breakpoint {
+      flex-direction: row;
+    }
+    &:nth-of-type(2) {
+      @include a.flexbox-config(
+        $flex-direction: row,
+        $justify-content: space-evenly
+      );
+      li:nth-of-type(2) {
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+      @include a.tablet-breakpoint-max-width {
+        display: none;
+      }
+    }
+
+    .navigation__nav-item {
+      margin: {
+        left: 1em;
+        right: 1em;
+      }
+      cursor: pointer;
+      font-weight: a.$medium-weight;
+      color: a.$gray;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        color: scale-color($color: a.$gray, $lightness: -75%);
+      }
+      .navigation__nav-item-dropdown-menu {
+        display: none;
+        background-color: a.$white;
+        padding: 2em;
+        border-radius: 0.5em;
+        box-shadow: 5px 10px 8px #888888;
+        margin-top: 1em;
+        position: fixed;
+      }
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  width: 75vw;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  display: block;
+  right: 125%;
+  color: blue;
+  background-color: white;
+  scroll-behavior: smooth;
+  @include a.tablet-breakpoint {
+    // display: none;
+
+    position: initial;
+    display: flex;
+    flex-direction: row;
+    color: rgb(104, 104, 109);
+  }
+}
