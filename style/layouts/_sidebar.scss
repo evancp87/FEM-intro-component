@@ -3,34 +3,38 @@
 .navigation {
   @include a.flexbox-config(
     $flex-direction: row,
-    $justify-content: space-between
+    $justify-content: space-between,
+    $align-items: center
   );
   width: 100vw;
   padding: 1em;
 
   .navigation__nav-items {
     @include a.flexbox-config($flex-direction: column);
+    padding: 5em 2em;
     @include a.tablet-breakpoint {
       flex-direction: row;
+      padding: 0;
+      margin-left: 4em;
     }
+
     &:nth-of-type(2) {
       @include a.flexbox-config(
         $flex-direction: row,
-        $justify-content: space-evenly
+        $justify-content: space-evenly,
+        $align-items: center
       );
-      li:nth-of-type(2) {
-        border: 1px solid #000;
-        border-radius: 10px;
-      }
+
       @include a.tablet-breakpoint-max-width {
         display: none;
+        transition: none;
       }
     }
 
     .navigation__nav-item {
       margin: {
         left: 1em;
-        right: 1em;
+        right: 2.5em;
       }
       cursor: pointer;
       font-weight: a.$medium-weight;
@@ -40,30 +44,69 @@
       &:hover {
         color: scale-color($color: a.$gray, $lightness: -75%);
       }
-      .navigation__nav-item-dropdown-menu {
-        display: none;
-        background-color: a.$white;
-        padding: 2em;
-        border-radius: 0.5em;
-        box-shadow: 5px 10px 8px #888888;
-        margin-top: 1em;
-        position: fixed;
+
+      @include a.tablet-breakpoint {
+        // TODO: check this out
+        .navigation__nav-item-dropdown-menu {
+          display: none;
+          background-color: a.$white;
+          padding: 2em;
+          border-radius: 0.5em;
+          box-shadow: 5px 10px 8px #888888;
+          margin-top: 1em;
+          position: absolute;
+
+          &:first-of-type {
+          }
+          &:second-of-type {
+          }
+        }
       }
     }
   }
+}
+
+.navigation-logo {
+  display: flex;
+  align-self: center;
+}
+
+.login-btn {
+  font-weight: a.$medium-weight;
+  color: a.$gray;
+  background-color: transparent;
+  display: inline-block;
+  height: auto;
+  border-radius: 1em;
+  border: 1px solid a.$black;
+  padding: 0.7em 2em;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    color: scale-color($color: a.$gray, $lightness: -75%);
+  }
+}
+
+.dropdown {
+  position: relative;
+}
+.info__list {
+  display: none;
+  height: 0;
 }
 
 .sidebar {
   position: fixed;
   width: 75vw;
   top: 0;
-  right: 0;
+
   bottom: 0;
   height: auto;
   display: block;
-  right: 125%;
+  left: 125%;
   color: blue;
   background-color: white;
+  transition: 0.6s ease-in-out;
   scroll-behavior: smooth;
   @include a.tablet-breakpoint {
     // display: none;
@@ -73,4 +116,71 @@
     flex-direction: row;
     color: rgb(104, 104, 109);
   }
+}
+
+.active-sidebar {
+  left: 35%;
+  top: 0;
+  bottom: 0;
+  transition: 0.6s ease-in-out;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.active-body {
+  background-color: scale-color($color: a.$white, $lightness: -75%);
+  transition: 0.6s ease-in-out;
+}
+
+// navigation .navigation__nav-items .navigation__nav-item .navigation__nav-item-dropdown-menu
+.navigation
+  .navigation__nav-items
+  .dropdown.active
+  .navigation__nav-item-dropdown-menu {
+  height: auto;
+  // TODO: check this
+  display: block;
+  overflow: visible;
+  transition: 0.8s;
+  right: 0em;
+  margin: {
+    bottom: 2em;
+    bottom: 2em;
+    left: 3em;
+    top: 1em;
+  }
+  animation: fade-in ease-in 0.8s;
+  @include a.tablet-breakpoint {
+    display: block;
+    height: auto;
+    margin: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.dropdown.active .arrow {
+  transform: rotate(180deg);
+}
+
+.bar.active {
+  display: none;
+}
+
+.close-menu.active {
+  display: block;
 }

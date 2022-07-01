@@ -1,5 +1,7 @@
 .features {
   cursor: pointer;
+  // TODO: check this
+  display: none;
   .features__item {
     &:nth-of-type(1) {
       list-style-image: url(../../images/icon-todo.svg);

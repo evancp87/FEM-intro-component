@@ -35,11 +35,12 @@
     </div>
 
     <ul class="navigation__nav-items sidebar" id="sidebar">
-      <li class="navigation__nav-item navigation-item--sidebar" id="features-dropdown">Features
-        <ul class="navigation__nav-item-dropdown-menu features">
-          <li class="features__item">Todo list<img src="images/icon-arrow-down.svg"></li>
+      <li class="navigation__nav-item navigation-item--sidebar dropdown" id="features-dropdown">Features
+        <img class="arrow" src="images/icon-arrow-down.svg">
+        <ul class="navigation__nav-item-dropdown-menu  features">
+          <li class="features__item">Todo list</li>
           <li class="features__item">
-            <div>Calendar</div><img class="arrow" src="images/icon-arrow-down.svg">
+            <div>Calendar</div>
           </li>
           <li class="features__item">Reminders</li>
           <li class="features__item">Planning</li>
@@ -48,7 +49,8 @@
         </ul>
 
       </li>
-      <li class="navigation__nav-item" id="info-dropdown">Company
+      <li class="navigation__nav-item dropdown" id="info-dropdown">Company
+        <img class="arrow" src="images/icon-arrow-down.svg">
         <ul class="navigation__nav-item-dropdown-menu info__list">
           <li>History</li>
           <li>Our Team</li>
@@ -66,11 +68,13 @@
       </li>
       <li class="navigation__nav-item">
 
-        Login
+        <button class="login-btn">Login</button>
       </li>
 
     </ul>
     <div class="hamburger-menu" id="hamburger"><img src="./images/icon-menu.svg" class="bar">
+      <img src="./images/icon-close-menu.svg" alt="cross" class="close-menu">
+
   </nav>
 
   <main class="main-content">
@@ -85,6 +89,8 @@
     </div>
     <div class=" blurb">
 
+
+
       <h1 class="heading">
         Make remote work
 
@@ -95,6 +101,8 @@
         create team rituals, and watch productivity soar.
 
       </p>
+
+
       <div class="learn-more-container">
 
         <button class="learn-more">

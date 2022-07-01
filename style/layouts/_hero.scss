@@ -8,8 +8,10 @@
   // @include flexbox-config($flex-direction: column);
   max-width: 100%;
   @include tablet-breakpoint {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     padding: 4rem 2rem;
+    align-items: center;
+    justify-content: center;
 
     // @include flexbox-config($flex-direction: row);
     // width: 80vw;
@@ -19,7 +21,7 @@
   .hero {
     order: 1;
     @include tablet-breakpoint {
-      max-width: 100%;
+      max-width: 50%;
       // width: 50%;
       order: 2;
     }
@@ -28,32 +30,37 @@
       height: auto;
       display: block;
       @include tablet-breakpoint {
-        width: 480px;
+        max-width: 480px;
       }
     }
   }
 }
+
 .blurb {
   margin-top: 2rem;
   order: 2;
   @include flexbox-config($flex-direction: column);
   @include tablet-breakpoint {
     margin-top: 0px;
-    max-width: 100%;
+    max-width: 50%;
     order: 1;
 
     display: flex;
     justify-content: center;
     padding: 2em;
   }
-  .blurb__txt {
-    margin-top: 2em;
-    padding: {
-      top: 0.8em;
-      bottom: 0.8em;
-      right: 2em;
-    }
-  }
+
+  // .blurb__txt {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   margin-top: 2em;
+  //   padding: {
+  //     top: 0.8em;
+  //     bottom: 0.8em;
+  //     right: 2em;
+  //   }
+  // }
 }
 
 .learn-more-container {
@@ -81,9 +88,24 @@
 }
 
 .heading {
-  font-size: clamp(36px, 10vw, 80px);
+  margin-top: 1em;
+  font-size: clamp(20px, 10vw, 80px);
   font-weight: $lg-weight;
   @include flexbox-config($justify-content: center);
+  @include tablet-breakpoint {
+    margin-right: 1.2em;
+  }
+  + .blurb__txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    padding: {
+      top: 0.8em;
+      bottom: 0.8em;
+      right: 2em;
+    }
+  }
 }
 
 .company-logos {
@@ -93,6 +115,7 @@
     align-items: center;
     justify-content: flex-start;
     flex: 1;
+    margin-top: 10em;
   }
   .company-logos-item {
     > img {
@@ -110,9 +133,6 @@
       }
     }
   }
-  @include tablet-breakpoint {
-    margin: 0;
-  }
 }
 
 .hamburger-menu {
@@ -121,4 +141,9 @@
   }
   position: relative;
   z-index: 10;
+  margin-left: 8em;
+
+  .close-menu {
+    display: none;
+  }
 }
