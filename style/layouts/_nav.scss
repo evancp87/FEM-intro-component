@@ -1,8 +1,9 @@
 .features {
   cursor: pointer;
-  // TODO: check this
   display: none;
   .features__item {
+    margin-top: 1em;
+
     &:nth-of-type(1) {
       list-style-image: url(../../images/icon-todo.svg);
     }
@@ -16,4 +17,9 @@
       list-style-image: url(../../images/icon-planning.svg);
     }
   }
+}
+
+.info__list-item {
+  margin-top: 1em;
+  // white-space: nowrap;
 }

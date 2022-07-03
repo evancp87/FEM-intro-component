@@ -1,6 +1,6 @@
 # Frontend Mentor - Intro section with dropdown navigation solution
 
-This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -14,9 +14,6 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,15 +27,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Solution Screenshot](./solution-screenshot.png)
 
 ### Links
 
@@ -50,63 +39,64 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- SCSS
+- Gulp JS
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Never used list-style-image before. It's cool!
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.features__item {
+    margin-top: 1em;
+
+    &:nth-of-type(1) {
+      list-style-image: url(../../images/icon-todo.svg);
+    }
+    &:nth-of-type(2) {
+      list-style-image: url(../../images/icon-calendar.svg);
+    }
+    &:nth-of-type(3) {
+      list-style-image: url(../../images/icon-reminders.svg);
+    }
+    &:nth-of-type(4) {
+      list-style-image: url(../../images/icon-planning.svg);
+    }
+  }
 }
 ```
+
+For the dropdown menus
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const dropdowns = document.querySelectorAll(".dropdown");
+
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", (e) => {
+    e.currentTarget.classList.toggle("active");
+  });
+});
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- I want to use React for my next project, as this one seemed a bit simple for using that library. I want to use the full suite of React capabilities on a project- React Router, Context Api, etc.
+- I want to use (and learn) CSS Modules the next project, instead of using BEM, as i don't like the class names you end up using
+- I had a good time learning how to use Gulp JS to spin up a local server, compile Sass, listen for changes to HTML and JS files. I did have issues deploying to Netlify because of Gulp, however.
+  -I had some issues centering certain aspects of the design. Some aspects were more involved than i thought they would be.
+  -Dropdown menus and accordions- making things scale to different screen sizes was a challenge.
+  -I got stuck with applying a dark background with active sidebar, as it would only apply to certain things, and not images.
+  -This challenge was good for attention to detail, as there were very small details that at times took me a long time to spot and implement. I need to improve this aspect, as sometimes I'd change one thing and it would have unexpected results elsewhere
+  -Sometimes I felt like I was hacking things to get them to work, rather than knowing the best solution for a particular problem, i.e lots of overriding styles from scaling to children. I need to keep practising, as I am using good tools such as css functions for font sizes, i.e clamp().
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Gulp Tutorial](https://www.youtube.com/watch?v=QgMQeLymAdU) - This helped me translate my gulp tasks into the latest version of Gulp, using functions.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Evan Parker](www.evanparker.co.uk)
+- Frontend Mentor - [@evancp87](https://www.frontendmentor.io/profile/evancp87)

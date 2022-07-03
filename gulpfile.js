@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable no-undef */
 const gulp = require("gulp"),
   sass = require("gulp-sass")(require("sass")),
   browserSync = require("browser-sync").create();

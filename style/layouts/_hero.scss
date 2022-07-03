@@ -1,21 +1,33 @@
 @use "./abstracts" as *;
 
+.body-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s linear;
+  background-color: $black;
+}
+
+.active-body-overlay {
+  z-index: 1;
+  opacity: 0.8;
+}
+
 .main-content {
   display: grid;
-
   grid-auto-rows: auto;
-
-  // @include flexbox-config($flex-direction: column);
   max-width: 100%;
   @include tablet-breakpoint {
-    display: flex;
     padding: 4rem 2rem;
-    align-items: center;
-    justify-content: center;
-
-    // @include flexbox-config($flex-direction: row);
-    // width: 80vw;
-    // height: 640px;
+    @include flexbox-config(
+      $flex-direction: row,
+      $justify-content: center,
+      $align-items: center
+    );
   }
 
   .hero {
@@ -49,18 +61,6 @@
     justify-content: center;
     padding: 2em;
   }
-
-  // .blurb__txt {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   margin-top: 2em;
-  //   padding: {
-  //     top: 0.8em;
-  //     bottom: 0.8em;
-  //     right: 2em;
-  //   }
-  // }
 }
 
 .learn-more-container {
@@ -76,6 +76,7 @@
     width: 136px;
     height: auto;
     border-radius: 0.6em;
+    font-size: 18px;
     padding: 0.8em;
     transition: all 0.4s ease-in-out;
     cursor: pointer;
@@ -92,7 +93,7 @@
   font-size: clamp(20px, 10vw, 80px);
   font-weight: $lg-weight;
   @include flexbox-config($justify-content: center);
-  @include tablet-breakpoint {
+  @include xl-tablets {
     margin-right: 1.2em;
   }
   + .blurb__txt {
@@ -100,20 +101,28 @@
     justify-content: center;
     align-items: center;
     margin-top: 2em;
+    font-size: clamp(16px, 3vw, 18px);
+    font-weight: $medium-weight;
+    color: $gray;
     padding: {
       top: 0.8em;
       bottom: 0.8em;
-      right: 2em;
+      left: 1em;
+      right: 1em;
+    }
+    @include tablet-breakpoint {
+      padding-right: 8em;
+      padding-left: 0;
     }
   }
 }
 
 .company-logos {
   @include flexbox-config($flex-direction: row, $justify-content: space-around);
-
+  margin-top: 1em;
   @include tablet-breakpoint {
-    align-items: center;
-    justify-content: flex-start;
+    @include flexbox-config($align-items: center, $justify-content: flex-start);
+    flex-wrap: wrap;
     flex: 1;
     margin-top: 10em;
   }
