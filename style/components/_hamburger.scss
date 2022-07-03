@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+.hamburger-menu {
+  @include tablet-breakpoint {
+    display: none;
+  }
+  position: relative;
+  z-index: 10;
+  margin-left: 8em;
+
+  .close-menu {
+    display: none;
+  }
+}

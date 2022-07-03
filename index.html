@@ -34,8 +34,8 @@
 
     </div>
 
-    <ul class="navigation__nav-items sidebar" id="sidebar">
-      <li class="navigation__nav-item navigation-item--sidebar dropdown" id="features-dropdown">Features
+    <ul class="navigation__nav-items navigation__items--sidebar" id="sidebar">
+      <li class="navigation__nav-item dropdown" id="features-dropdown">Features
         <img class="arrow" src="images/icon-arrow-down.svg">
         <ul class="navigation__nav-item-dropdown-menu  features">
           <li class="features__item">Todo list</li>
@@ -62,7 +62,7 @@
       <li class="navigation__nav-item">About</li>
 
     </ul>
-    <ul class="navigation__nav-items sub-menu">
+    <ul class="navigation__nav-items">
       <li class="navigation__nav-item">
         Register
       </li>
@@ -78,43 +78,44 @@
   </nav>
 
   <main class="main-content">
-    <div class="body-overlay"></div>
-    <div class="hero">
-      <picture class="hero__container">
+    <div class="main-content__body-overlay"></div>
+    <div class="main-content__hero">
+      <picture class="main-content__hero-container">
         <source media="(max-width: 768px)" srcset="./images/image-hero-mobile.png" />
         <source media="(min-width: 768px)" srcset="./images/image-hero-desktop.png" />
         <img src="./images/image-hero-desktop.png"" alt=" man with laptop surrounded by colour shapes"
-          class="hero__img" />
+          class="main-content__hero-img" />
       </picture>
     </div>
-    <div class=" blurb">
+    <div class="main-content__blurb">
 
 
 
-      <h1 class="heading">
+      <h1 class="main-content__heading">
         Make remote work
 
       </h1>
 
-      <p class="blurb__txt">
+      <p class="main-content__blurb-txt">
         Get your team in sync, no matter your location. Streamline processes,
         create team rituals, and watch productivity soar.
 
       </p>
 
 
-      <div class="learn-more-container">
+      <div class="main-content__learn-more-container">
 
-        <button class="learn-more">
+        <button class="main-content__learn-more">
 
           Learn more
         </button>
       </div>
-      <ul class="company-logos">
-        <li class="company-logos-item"><img src="./images/client-databiz.svg" alt="databiz logo"></li>
-        <li class="company-logos-item"><img src="./images/client-audiophile.svg" alt="audiophile logo"></li>
-        <li class="company-logos-item"><img src="./images/client-meet.svg" alt="meet logo"></li>
-        <li class="company-logos-item"><img src="./images/client-maker.svg" alt="maker logo"></li>
+      <ul class="main-content__company-logos">
+        <li class="main-content__company-logos-item"><img src="./images/client-databiz.svg" alt="databiz logo"></li>
+        <li class="main-content__company-logos-item"><img src="./images/client-audiophile.svg" alt="audiophile logo">
+        </li>
+        <li class="main-content__company-logos-item"><img src="./images/client-meet.svg" alt="meet logo"></li>
+        <li class="main-content__company-logos-item"><img src="./images/client-maker.svg" alt="maker logo"></li>
 
       </ul>
     </div>

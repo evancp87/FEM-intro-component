@@ -1,3 +1,5 @@
+@use "../abstracts/" as a;
+
 .features {
   cursor: pointer;
   display: none;
@@ -22,4 +24,97 @@
 .info__list-item {
   margin-top: 1em;
   // white-space: nowrap;
+}
+
+.navigation {
+  @include a.flexbox-config(
+    $flex-direction: row,
+    $justify-content: space-between,
+    $align-items: center
+  );
+  width: 100vw;
+  padding: 1em;
+
+  .navigation__nav-items {
+    @include a.flexbox-config($flex-direction: column);
+    padding: 5em 2em;
+    z-index: 10;
+    @include a.tablet-breakpoint {
+      flex-direction: row;
+      padding: 0;
+      margin-left: 4em;
+    }
+
+    &:nth-of-type(2) {
+      @include a.flexbox-config(
+        $flex-direction: row,
+        $justify-content: space-evenly,
+        $align-items: center
+      );
+
+      @include a.tablet-breakpoint-max-width {
+        display: none;
+        transition: none;
+      }
+    }
+
+    .navigation__nav-item {
+      margin: {
+        left: 1em;
+        right: 2.5em;
+      }
+      cursor: pointer;
+      font-weight: a.$medium-weight;
+      color: a.$gray;
+      font-size: 16px;
+      line-height: 26px;
+      transition: all 0.3s ease-in;
+
+      @include a.tablet-breakpoint {
+        @include a.flexbox-config(
+          $justify-content: center,
+          $align-items: center
+        );
+        font-size: 14px;
+        line-height: 16px;
+        &:hover {
+          color: scale-color($color: a.$gray, $lightness: -75%);
+        }
+      }
+      @include a.tablet-breakpoint {
+        .navigation__nav-item-dropdown-menu {
+          display: none;
+          background-color: a.$white;
+          padding: 2em;
+          border-radius: 0.5em;
+          box-shadow: 5px 10px 8px #888888;
+          margin-top: 1em;
+          position: absolute;
+          &:hover {
+            color: a.$gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navigation-logo {
+  display: flex;
+  align-self: center;
+}
+
+.login-btn {
+  @extend %btn;
+  font-weight: a.$medium-weight;
+  color: a.$gray;
+  background-color: transparent;
+  border-radius: 1em;
+  border: 1px solid a.$black;
+  padding: 0.7em 2em;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    color: scale-color($color: a.$gray, $lightness: -75%);
+  }
 }

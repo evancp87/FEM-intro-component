@@ -15,7 +15,7 @@ const hamburger = document.getElementById("hamburger");
 const sidebar = document.getElementById("sidebar");
 
 // handles toggling of dark overlay when sidebar is active
-const bodyOverlay = document.querySelector(".body-overlay");
+const bodyOverlay = document.querySelector(".main-content__body-overlay");
 
 function darkenBackground() {
   bodyOverlay.classList.toggle("active-body-overlay");

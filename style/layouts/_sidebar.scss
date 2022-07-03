@@ -1,99 +1,5 @@
 @use "../abstracts/" as a;
 
-.navigation {
-  @include a.flexbox-config(
-    $flex-direction: row,
-    $justify-content: space-between,
-    $align-items: center
-  );
-  width: 100vw;
-  padding: 1em;
-
-  .navigation__nav-items {
-    @include a.flexbox-config($flex-direction: column);
-    padding: 5em 2em;
-    z-index: 10;
-    @include a.tablet-breakpoint {
-      flex-direction: row;
-      padding: 0;
-      margin-left: 4em;
-    }
-
-    &:nth-of-type(2) {
-      @include a.flexbox-config(
-        $flex-direction: row,
-        $justify-content: space-evenly,
-        $align-items: center
-      );
-
-      @include a.tablet-breakpoint-max-width {
-        display: none;
-        transition: none;
-      }
-    }
-
-    .navigation__nav-item {
-      margin: {
-        left: 1em;
-        right: 2.5em;
-      }
-      cursor: pointer;
-      font-weight: a.$medium-weight;
-      color: a.$gray;
-      font-size: 16px;
-      line-height: 26px;
-      transition: all 0.3s ease-in;
-
-      @include a.tablet-breakpoint {
-        @include a.flexbox-config(
-          $justify-content: center,
-          $align-items: center
-        );
-        font-size: 14px;
-        line-height: 16px;
-        &:hover {
-          color: scale-color($color: a.$gray, $lightness: -75%);
-        }
-      }
-      @include a.tablet-breakpoint {
-        .navigation__nav-item-dropdown-menu {
-          display: none;
-          background-color: a.$white;
-          padding: 2em;
-          border-radius: 0.5em;
-          box-shadow: 5px 10px 8px #888888;
-          margin-top: 1em;
-          position: absolute;
-          &:hover {
-            color: a.$gray;
-          }
-        }
-      }
-    }
-  }
-}
-
-.navigation-logo {
-  display: flex;
-  align-self: center;
-}
-
-.login-btn {
-  font-weight: a.$medium-weight;
-  color: a.$gray;
-  background-color: transparent;
-  display: inline-block;
-  height: auto;
-  border-radius: 1em;
-  border: 1px solid a.$black;
-  padding: 0.7em 2em;
-  transition: all 0.4s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    color: scale-color($color: a.$gray, $lightness: -75%);
-  }
-}
-
 .dropdown {
   position: relative;
 }
@@ -102,7 +8,7 @@
   height: 0;
 }
 
-.sidebar {
+.navigation__items--sidebar {
   position: fixed;
   width: 75vw;
   top: 0;
@@ -140,7 +46,7 @@
   height: auto;
   display: block;
   overflow: visible;
-  transition: 0.8s;
+  transition: 0.4s;
   right: 0em;
   margin: {
     bottom: 2em;
@@ -148,7 +54,8 @@
     left: 3em;
     top: 1em;
   }
-  animation: fade-in ease-in 0.8s;
+  @include a.prefix(animation, fade-in ease-in 0.8s, ms webkit moz);
+
   @include a.tablet-breakpoint {
     display: block;
     height: auto;
@@ -185,6 +92,9 @@
 
 .arrow {
   margin-left: 1em;
+  @include a.extra-sm-phones-max {
+    margin-left: 0.5em;
+  }
 }
 .bar.active {
   display: none;

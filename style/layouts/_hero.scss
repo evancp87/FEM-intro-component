@@ -1,6 +1,6 @@
 @use "./abstracts" as *;
 
-.body-overlay {
+.main-content__body-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@
   grid-auto-rows: auto;
   max-width: 100%;
   @include tablet-breakpoint {
-    padding: 4rem 2rem;
+    padding: 2.5rem 2rem;
     @include flexbox-config(
       $flex-direction: row,
       $justify-content: center,
@@ -30,14 +30,13 @@
     );
   }
 
-  .hero {
+  .main-content__hero {
     order: 1;
     @include tablet-breakpoint {
       max-width: 50%;
-      // width: 50%;
       order: 2;
     }
-    .hero__img {
+    .main-content__hero-img {
       max-width: 100%;
       height: auto;
       display: block;
@@ -45,114 +44,5 @@
         max-width: 480px;
       }
     }
-  }
-}
-
-.blurb {
-  margin-top: 2rem;
-  order: 2;
-  @include flexbox-config($flex-direction: column);
-  @include tablet-breakpoint {
-    margin-top: 0px;
-    max-width: 50%;
-    order: 1;
-
-    display: flex;
-    justify-content: center;
-    padding: 2em;
-  }
-}
-
-.learn-more-container {
-  @include flexbox-config($justify-content: center);
-  @include tablet-breakpoint {
-    justify-content: flex-start;
-    margin-top: $padding-md-em;
-  }
-  .learn-more {
-    color: $white;
-    background-color: $black;
-    display: inline-block;
-    width: 136px;
-    height: auto;
-    border-radius: 0.6em;
-    font-size: 18px;
-    padding: 0.8em;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-
-    &:hover {
-      background-color: scale-color($color: $black, $lightness: +100%);
-      color: scale-color($color: $black, $lightness: -100%);
-    }
-  }
-}
-
-.heading {
-  margin-top: 1em;
-  font-size: clamp(20px, 10vw, 80px);
-  font-weight: $lg-weight;
-  @include flexbox-config($justify-content: center);
-  @include xl-tablets {
-    margin-right: 1.2em;
-  }
-  + .blurb__txt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2em;
-    font-size: clamp(16px, 3vw, 18px);
-    font-weight: $medium-weight;
-    color: $gray;
-    padding: {
-      top: 0.8em;
-      bottom: 0.8em;
-      left: 1em;
-      right: 1em;
-    }
-    @include tablet-breakpoint {
-      padding-right: 8em;
-      padding-left: 0;
-    }
-  }
-}
-
-.company-logos {
-  @include flexbox-config($flex-direction: row, $justify-content: space-around);
-  margin-top: 1em;
-  @include tablet-breakpoint {
-    @include flexbox-config($align-items: center, $justify-content: flex-start);
-    flex-wrap: wrap;
-    flex: 1;
-    margin-top: 10em;
-  }
-  .company-logos-item {
-    > img {
-      width: 64px;
-      height: auto;
-      margin: {
-        top: 1em;
-        bottom: 1em;
-        left: 0.1em;
-        right: 0.1em;
-      }
-      @include tablet-breakpoint {
-        width: 80px;
-        margin-right: 2em;
-      }
-    }
-  }
-}
-
-.hamburger-menu {
-  @include tablet-breakpoint {
-    display: none;
-  }
-  position: relative;
-  z-index: 10;
-  margin-left: 8em;
-
-  .close-menu {
-    display: none;
   }
 }
