@@ -1,5 +1,6 @@
 @use "../abstracts/" as a;
 
+// dropdown menus
 .dropdown {
   position: relative;
 }
@@ -38,7 +39,7 @@
   scroll-behavior: smooth;
 }
 
-// navigation .navigation__nav-items .navigation__nav-item .navigation__nav-item-dropdown-menu
+// active dropdown styles
 .navigation
   .navigation__nav-items
   .dropdown.active
@@ -70,6 +71,7 @@
   }
 }
 
+// fade in animation for dropdown accordions on mobile
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -86,6 +88,7 @@
   }
 }
 
+// active sidebar arrow styles
 .dropdown.active .arrow {
   transform: rotate(180deg);
 }
@@ -96,6 +99,8 @@
     margin-left: 0.5em;
   }
 }
+
+// hamburger bars when active- onClick removes one set and presents other
 .bar.active {
   display: none;
 }

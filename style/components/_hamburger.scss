@@ -1,5 +1,6 @@
 @use "../abstracts/" as *;
 
+// hamburger menu on mobile devices
 .hamburger-menu {
   @include tablet-breakpoint {
     display: none;

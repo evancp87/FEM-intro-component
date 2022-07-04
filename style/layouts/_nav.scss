@@ -1,5 +1,6 @@
 @use "../abstracts/" as a;
 
+// Icons for first dropdown menu
 .features {
   cursor: pointer;
   display: none;
@@ -26,6 +27,7 @@
   // white-space: nowrap;
 }
 
+// navbar styles
 .navigation {
   @include a.flexbox-config(
     $flex-direction: row,
@@ -104,6 +106,7 @@
   align-self: center;
 }
 
+// login button in navbar
 .login-btn {
   @extend %btn;
   font-weight: a.$medium-weight;

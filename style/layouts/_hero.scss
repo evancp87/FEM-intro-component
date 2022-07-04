@@ -1,5 +1,6 @@
 @use "./abstracts" as *;
 
+// overlay for active sidebar, deactivated by default
 .main-content__body-overlay {
   position: fixed;
   top: 0;
@@ -17,6 +18,7 @@
   opacity: 0.8;
 }
 
+// main content- hero image and text
 .main-content {
   display: grid;
   grid-auto-rows: auto;
