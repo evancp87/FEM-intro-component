@@ -35,3 +35,4 @@ hamburger.addEventListener("click", () => {
   darkenBackground();
   toggleOpenSideBar();
 });
+//# sourceMappingURL=index.js.map
