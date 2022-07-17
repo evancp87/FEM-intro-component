@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^4.0.2"
+    "cssnano": "^5.1.12",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.27.10",

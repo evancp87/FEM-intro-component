@@ -9,7 +9,7 @@ dropdowns.forEach((dropdown) => {
   });
 });
 
-// hamburger menu/sidebar for mobiles
+// hamburger menu/sidebar for mobile devices
 
 const hamburger = document.getElementById("hamburger");
 const sidebar = document.getElementById("sidebar");
