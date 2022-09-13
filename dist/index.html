@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/dist/style.css">
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navigation">
+    <div class="navigation__logo">
+      <img src="./images/logo.svg" alt="snap company logo" class="navigation__logo-img">
+
+    </div>
+
+    <ul class="navigation__nav-items navigation__items--sidebar" id="sidebar">
+      <li class="navigation__nav-item dropdown" id="features-dropdown">Features
+        <img class="arrow" src="images/icon-arrow-down.svg">
+        <ul class="navigation__nav-item-dropdown-menu  features">
+          <li class="features__item">Todo list</li>
+          <li class="features__item">
+            <div>Calendar</div>
+          </li>
+          <li class="features__item">Reminders</li>
+          <li class="features__item">Planning</li>
+
+
+        </ul>
+
+      </li>
+      <li class="navigation__nav-item dropdown" id="info-dropdown">Company
+        <img class="arrow" src="images/icon-arrow-down.svg">
+        <ul class="navigation__nav-item-dropdown-menu info__list">
+          <li class="info__list-item">History</li>
+          <li class="info__list-item">Our Team</li>
+          <li class="info__list-item">Blog</li>
+        </ul>
+
+      </li>
+      <li class="navigation__nav-item">Careers</li>
+      <li class="navigation__nav-item">About</li>
+
+    </ul>
+    <ul class="navigation__nav-items">
+      <li class="navigation__nav-item">
+        Register
+      </li>
+      <li class="navigation__nav-item">
+
+        <button class="login-btn">Login</button>
+      </li>
+
+    </ul>
+    <div class="hamburger-menu" id="hamburger"><img src="./images/icon-menu.svg" class="bar">
+      <img src="./images/icon-close-menu.svg" alt="cross" class="close-menu">
+
+  </nav>
+
+  <main class="main-content">
+    <div class="main-content__body-overlay"></div>
+    <div class="main-content__hero">
+      <picture class="main-content__hero-container">
+        <source media="(max-width: 768px)" srcset="./images/image-hero-mobile.png" />
+        <source media="(min-width: 768px)" srcset="./images/image-hero-desktop.png" />
+        <img src="./images/image-hero-desktop.png"" alt=" man with laptop surrounded by colour shapes"
+          class="main-content__hero-img" />
+      </picture>
+    </div>
+    <div class="main-content__blurb">
+
+
+
+      <h1 class="main-content__heading">
+        Make remote work
+
+      </h1>
+
+      <p class="main-content__blurb-txt">
+        Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.
+
+      </p>
+
+
+      <div class="main-content__learn-more-container">
+
+        <button class="main-content__learn-more">
+
+          Learn more
+        </button>
+      </div>
+      <ul class="main-content__company-logos">
+        <li class="main-content__company-logos-item"><img src="./images/client-databiz.svg" alt="databiz logo"></li>
+        <li class="main-content__company-logos-item"><img src="./images/client-audiophile.svg" alt="audiophile logo">
+        </li>
+        <li class="main-content__company-logos-item"><img src="./images/client-meet.svg" alt="meet logo"></li>
+        <li class="main-content__company-logos-item"><img src="./images/client-maker.svg" alt="maker logo"></li>
+
+      </ul>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Evan Parker in 2022</a>.
+  </div>
+</body>
+<script src="./scripts/index.js"></script>
+
+</html>
+//# sourceMappingURL=index.html.map
