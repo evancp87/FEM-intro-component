@@ -35,6 +35,12 @@ function generateJS() {
   );
 }
 
+function generateImages() {
+  return src("./images/*.{png,gif,jpg,svg}").pipe(dest("dist/images"), {
+    sourcemaps: ".",
+  });
+}
+
 function browserSyncServe(cb) {
   browserSync.init({
     server: {
@@ -69,7 +75,8 @@ exports.default = series(
   html,
   browserSyncServe,
   browserSyncReload,
-  watchTask
+  watchTask,
+  generateImages
 );
 
 // const gulp = require("gulp"),
