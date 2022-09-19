@@ -8,9 +8,7 @@ const cssnano = require("cssnano");
 const postcss = require("gulp-postcss");
 
 function html() {
-  return src("*.html", { sourcemaps: true }).pipe(
-    dest("dist", { sourcemaps: "." })
-  );
+  return src("*.html").pipe(dest("dist", { sourcemaps: "." }));
 }
 
 // compile scss to css
@@ -35,9 +33,9 @@ function generateJS() {
   );
 }
 
-function generateImages() {
-  return src("./images/**/*").pipe(dest("dist", { sourcemaps: "." }));
-}
+// function generateImages() {
+//   return src("./images/**/*").pipe(dest("dist", { sourcemaps: "." }));
+// }
 
 function browserSyncServe(cb) {
   browserSync.init({
@@ -73,8 +71,7 @@ exports.default = series(
   html,
   browserSyncServe,
   browserSyncReload,
-  watchTask,
-  generateImages
+  watchTask
 );
 
 // const gulp = require("gulp"),
