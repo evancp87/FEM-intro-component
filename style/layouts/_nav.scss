@@ -8,16 +8,16 @@
     margin-top: 1em;
 
     &:nth-of-type(1) {
-      list-style-image: url(../../images/icon-todo.svg);
+      list-style-image: url(opt/build/repo/images/icon-todo.svg);
     }
     &:nth-of-type(2) {
-      list-style-image: url(../../images/icon-calendar.svg);
+      list-style-image: url(opt/build/repo/images/icon-calendar.svg);
     }
     &:nth-of-type(3) {
-      list-style-image: url(../../images/icon-reminders.svg);
+      list-style-image: url(opt/build/repo/images/icon-reminders.svg);
     }
     &:nth-of-type(4) {
-      list-style-image: url(../../images/icon-planning.svg);
+      list-style-image: url(opt/build/repo/images/icon-planning.svg);
     }
   }
 }
