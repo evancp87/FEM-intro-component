@@ -36,9 +36,7 @@ function generateJS() {
 }
 
 function generateImages() {
-  return src("./images/*.{png,gif,jpg,svg}").pipe(dest("dist/images"), {
-    sourcemaps: ".",
-  });
+  return src("./images/**/*").pipe(dest("dist", { sourcemaps: "." }));
 }
 
 function browserSyncServe(cb) {
